@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Reflection.Metadata.Ecma335;
 
 namespace Monogame_2_Texture_with_NO_COLOUR
 {
@@ -8,7 +9,7 @@ namespace Monogame_2_Texture_with_NO_COLOUR
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
-        Texture2D dinoTexture;
+        Texture2D taintTexture, burnbaseTexture, patchouTexture, tforgorTexture, lilrTexture;
 
         public Game1()
         {
@@ -34,7 +35,11 @@ namespace Monogame_2_Texture_with_NO_COLOUR
 
             // TODO: use this.Content to load your game content here
 
-            dinoTexture = Content.Load<Texture2D>("dino");
+            taintTexture = Content.Load<Texture2D>("taint");
+            burnbaseTexture = Content.Load<Texture2D>("burnbase");
+            lilrTexture = Content.Load<Texture2D>("lilrt");
+            tforgorTexture = Content.Load<Texture2D>("tforgor");
+            patchouTexture = Content.Load<Texture2D>("patchou");
         }
 
         protected override void Update(GameTime gameTime)
@@ -53,7 +58,11 @@ namespace Monogame_2_Texture_with_NO_COLOUR
 
             // TODO: Add your drawing code here
             _spriteBatch.Begin();
-            _spriteBatch.Draw(dinoTexture, new Vector2(10, 10), Color.Blue);
+            _spriteBatch.Draw(burnbaseTexture, new Vector2(0, 0), Color.White);
+            _spriteBatch.Draw(taintTexture, new Vector2(190, 190), Color.White);
+            _spriteBatch.Draw(lilrTexture, new Vector2(450, 300), Color.White);
+            _spriteBatch.Draw(tforgorTexture, new Vector2(300, 3), Color.White);
+            _spriteBatch.Draw(patchouTexture, new Vector2(350, 234), Color.White);
             _spriteBatch.End();
 
             base.Draw(gameTime);
